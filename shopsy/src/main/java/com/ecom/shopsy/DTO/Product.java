@@ -8,17 +8,18 @@ import lombok.Data;
 @Data
 public class Product {
 
-    int id;
+
+    private String id;
     
-    @Pattern(regexp = "^([A-Za-z\\s){1,2}[A-Za-z]+$")
+    //@Pattern(regexp = "^([A-Za-z\\s){1,2}[A-Za-z]+$")
     @NotNull(message = "Name Field Cannot be Empty")
     String name;
 
-    @Pattern(regexp = "^[A-Za-z]+$")
+    //@Pattern(regexp = "^[A-Za-z]+$")
     @NotNull(message = "Name Field Cannot be Empty")
     String category;
 
-    @Pattern(regexp = "^[A-Za-z\\s]{1,2}[A-Za-z]+$")
+    //@Pattern(regexp = "^[A-Za-z\\s]{1,2}[A-Za-z]+$")
     @NotNull(message = "Name Field Cannot be Empty")
     String color;
 
@@ -29,7 +30,7 @@ public class Product {
     int stock;
 
     @NotNull(message="Must be True or False")
-    @Pattern(regexp = "^[a-zA-Z]+$")
+    //@Pattern(regexp = "^[a-zA-Z]+$")
     boolean isAvailable;
 
 }

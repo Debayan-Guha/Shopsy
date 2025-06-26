@@ -10,4 +10,7 @@ import com.ecom.shopsy.Enum.Roles;
 public interface RolesRepo extends JpaRepository<RolesEntity,Integer>{
 
     
+    RolesEntity getByuserroles(String role);
+
+    
 } 

@@ -3,10 +3,10 @@ package com.ecom.shopsy.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.ecom.shopsy.Entity.ProductEntity;
+import com.ecom.shopsy.Entity.LoginEntity;
 
 @Repository
-public interface ProductRepo extends JpaRepository<ProductEntity,String>{
-
+public interface LoginRepo extends JpaRepository<LoginEntity,Integer>{
     
-} 
+    public LoginEntity getByName(String name);
+}

@@ -1,7 +1,9 @@
 package com.ecom.shopsy.Entity;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,8 +18,8 @@ import lombok.Data;
 public class ProductEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    @Column(unique=true)
+    protected String id;
 
     String name;
     String category;
@@ -26,7 +28,7 @@ public class ProductEntity {
     int stock;
     boolean isAvailable;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     SellerEntity seller;
     
 }

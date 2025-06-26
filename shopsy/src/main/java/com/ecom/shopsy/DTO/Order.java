@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class Order {
 
-    public int id;
+    public String id;
     public int quantity;
     
 }

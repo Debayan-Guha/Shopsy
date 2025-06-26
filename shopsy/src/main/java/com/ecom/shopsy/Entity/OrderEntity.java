@@ -7,6 +7,7 @@ import java.util.Set;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -26,10 +27,10 @@ public class OrderEntity {
     int id;
     LocalDateTime date;
     
-   @ManyToOne
+   @ManyToOne(fetch = FetchType.LAZY)
    CustomerEntity customer;
 
-   @OneToMany(mappedBy = "order_history",cascade = CascadeType.PERSIST)
+   @OneToMany(mappedBy = "order_history",cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
    List<Order_Details> details;
 
 

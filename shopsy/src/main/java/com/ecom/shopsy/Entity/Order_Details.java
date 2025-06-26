@@ -3,6 +3,7 @@ package com.ecom.shopsy.Entity;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,6 +26,6 @@ public class Order_Details {
     private int quantity;
     private double price;    
     
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     OrderEntity order_history;
 }
