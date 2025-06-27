@@ -2,5 +2,5 @@ package com.ecom.shopsy.Enum;
 
 public enum Roles {
     
-    ADMIN,SELLER,CUSTOMER;
+    ROLE_ADMIN,ROLE_SELLER,ROLE_CUSTOMER;
 }

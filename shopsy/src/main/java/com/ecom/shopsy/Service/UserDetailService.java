@@ -33,18 +33,15 @@ public class UserDetailService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
  
         
-        LoginEntity login = le.getByName(username);
-        
+        LoginEntity login = le.getByName(username);        
         
         Login log = new Login();
         log.setName(login.getName());
         log.setPassword(login.getPassword());
+
         Set<String> r = new HashSet<>();
-        System.out.println("name="+login.getName());
         for (RolesEntity iRoles : login.getRoles()) {
-            System.out.println("roles="+iRoles.getUserroles());
-            r.add(iRoles.getUserroles());
-            
+            r.add(iRoles.getUserroles());            
         }
         log.setRole(r);
 

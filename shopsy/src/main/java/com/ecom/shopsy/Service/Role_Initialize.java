@@ -30,9 +30,9 @@ public class Role_Initialize {
             RolesEntity c=new RolesEntity();
             RolesEntity s=new RolesEntity();
 
-            a.setUserroles("ROLE_"+Roles.ADMIN.toString());
-            c.setUserroles("ROLE_"+Roles.CUSTOMER.toString());
-            s.setUserroles("ROLE_"+Roles.SELLER.toString());
+            a.setUserroles(Roles.ROLE_ADMIN.toString());
+            c.setUserroles(Roles.ROLE_CUSTOMER.toString());
+            s.setUserroles(Roles.ROLE_SELLER.toString());
 
             List<RolesEntity> list=new ArrayList<>(); 
             list.add(a);

@@ -4,10 +4,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.ecom.shopsy.DTO.Login;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -33,10 +35,10 @@ public class SellerEntity {
     String address;
     String password;
 
-    @OneToMany(mappedBy="seller",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="seller",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     Set<ProductEntity> products=new HashSet<>();
 
-    @OneToOne(mappedBy="seller",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy="seller",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private LoginEntity login;
     
 }

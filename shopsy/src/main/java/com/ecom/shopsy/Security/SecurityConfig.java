@@ -32,7 +32,7 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(Customizer -> Customizer.disable());
-        http.authorizeHttpRequests((requests) -> requests.requestMatchers("/shopsy/seller/register").permitAll().anyRequest().authenticated());
+        http.authorizeHttpRequests((requests) -> requests.requestMatchers("/shopsy/seller/register","/shopsy/customer/register").permitAll().requestMatchers("/shopsy/seller/**").hasRole("SELLER").requestMatchers("/shopsy/customer/**").hasRole("CUSTOMER").anyRequest().authenticated());
 
         http.httpBasic(Customizer.withDefaults()) ;//.formLogin(Customizer.withDefaults());
 

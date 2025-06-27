@@ -19,16 +19,15 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="Roles")
+@Table(name = "Roles")
 public class RolesEntity {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    
     private String userroles;
 
-   @ManyToMany(mappedBy = "roles",fetch = FetchType.LAZY)
-   private List<LoginEntity> logins;
+    @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
+    private List<LoginEntity> logins;
 }

@@ -1,5 +1,7 @@
 package com.ecom.shopsy.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,7 +20,7 @@ import lombok.Data;
 public class ProductEntity {
 
     @Id
-    @Column(unique=true)
+    @Column(unique = true)
     protected String id;
 
     String name;
@@ -26,9 +28,9 @@ public class ProductEntity {
     String color;
     double price;
     int stock;
-    boolean isAvailable;
+    String available;
 
     @ManyToOne(fetch = FetchType.LAZY)
     SellerEntity seller;
-    
+
 }

@@ -1,6 +1,7 @@
 package com.ecom.shopsy.Controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -29,7 +30,7 @@ public class SellerController {
 
     @Autowired
     private SellerService ss;
-    
+   
     
     @PostMapping("/register")
     private String register(@RequestBody @Valid Seller seller)

@@ -24,14 +24,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @RestController
-@PreAuthorize("hasRole('CUSTOMER')")
 @RequestMapping("/shopsy/customer")
 public class CustomerController {
 
     @Autowired
     CustomerService cs;
 
-    @PreAuthorize("permitAll()")
     @PostMapping("/register")
     public String registerCustomer(@RequestBody @Valid Customer customer) {
         return cs.registerCustomer(customer);

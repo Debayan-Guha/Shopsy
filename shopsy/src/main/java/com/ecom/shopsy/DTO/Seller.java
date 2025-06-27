@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Seller implements UserDetails{
+public class Seller {
     
     @NotNull
     String name;
@@ -44,19 +44,5 @@ public class Seller implements UserDetails{
     String password;
 
     List<Product> products=new ArrayList<>();
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-      List c=new ArrayList<>();
-      c.add(new SimpleGrantedAuthority("SELLER"));
-      return c;
-    }
-
-    @Override
-    public String getUsername() {
-      return name;
-    }
-    public String getPassword(){
-      return password;
-    }
+    
 }
