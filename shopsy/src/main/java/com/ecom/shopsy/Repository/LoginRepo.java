@@ -9,4 +9,8 @@ import com.ecom.shopsy.Entity.LoginEntity;
 public interface LoginRepo extends JpaRepository<LoginEntity,Integer>{
     
     public LoginEntity getByName(String name);
+
+    public LoginEntity getByCustomer(String id);
+
+    public LoginEntity getBySeller(String id);
 }

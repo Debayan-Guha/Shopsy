@@ -20,6 +20,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Seller {
     
+    String id;
+    
     @NotNull
     String name;
 

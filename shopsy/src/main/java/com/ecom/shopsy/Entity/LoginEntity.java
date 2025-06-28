@@ -39,4 +39,7 @@ public class LoginEntity {
     @OneToOne(fetch = FetchType.LAZY)
     private SellerEntity seller;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    private AdminEntity admin;
+
 }

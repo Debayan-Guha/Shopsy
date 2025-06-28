@@ -18,8 +18,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Customer implements UserDetails {
+public class Customer {
 
+  String id;
   @NotNull
   String name;
 
@@ -41,27 +42,5 @@ public class Customer implements UserDetails {
   // must be at least 8 characters long and include uppercase, lowercase, digit,
   // and special character")
   String password;
-
-  public Customer(Customer cust) {
-    name = cust.getUsername();
-    password = cust.getPassword();
-  }
-
-  @Override
-  public Collection<? extends GrantedAuthority> getAuthorities() {
-    List c = new ArrayList<>();
-    c.add(new SimpleGrantedAuthority("ROLE_USER"));
-    return c;
-  }
-
-  @Override
-  public String getUsername() {
-    return this.name;
-  }
-
-  @Override
-  public String getPassword() {
-    return this.password;
-  }
 
 }
