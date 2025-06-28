@@ -12,24 +12,24 @@ public class Product {
 
     // @Pattern(regexp = "^([A-Za-z\\s){1,2}[A-Za-z]+$")
     @NotNull(message = "Name Field Cannot be Empty")
-    String name;
+    private String name;
 
     // @Pattern(regexp = "^[A-Za-z]+$")
     @NotNull(message = "Name Field Cannot be Empty")
-    String category;
+    private String category;
 
     // @Pattern(regexp = "^[A-Za-z\\s]{1,2}[A-Za-z]+$")
     @NotNull(message = "Name Field Cannot be Empty")
-    String color;
+    private String color;
 
     @Min(value = 10, message = "Must be greater than rs.10")
-    double price;
+    private double price;
 
     @NotNull
-    int stock;
+    private int stock;
 
     // @Pattern(regexp = "^[a-zA-Z]+$")
     @NotNull(message = "Must be True or False")
-    String available;
+    private String available;
 
 }

@@ -1,6 +1,5 @@
 package com.ecom.shopsy.Service;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 import com.ecom.shopsy.DTO.Login;
 import com.ecom.shopsy.Entity.LoginEntity;
 import com.ecom.shopsy.Entity.RolesEntity;
-import com.ecom.shopsy.Enum.Roles;
 import com.ecom.shopsy.Repository.LoginRepo;
 
 import jakarta.transaction.Transactional;

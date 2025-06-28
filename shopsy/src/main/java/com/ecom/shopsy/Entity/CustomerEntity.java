@@ -7,8 +7,6 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
@@ -17,15 +15,15 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="Customers")
+@Table(name="Customer")
 public class CustomerEntity {
     
      @Id
      @Column(unique=true)
     protected String id;
-
-    protected String name;
     
+    protected String name;
+    @Column(name="phone")
     protected long ph;
     
     @Column(unique = true)

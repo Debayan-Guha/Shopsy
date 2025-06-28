@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ecom.shopsy.DTO.Admin;
 import com.ecom.shopsy.DTO.Customer;
 import com.ecom.shopsy.DTO.Seller;
-import com.ecom.shopsy.Repository.AdminRepo;
 import com.ecom.shopsy.Service.AdminService;
 
 import jakarta.validation.Valid;
@@ -21,9 +20,6 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 
 
 @RestController
