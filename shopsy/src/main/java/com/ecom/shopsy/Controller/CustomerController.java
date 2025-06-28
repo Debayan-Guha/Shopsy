@@ -1,6 +1,7 @@
 package com.ecom.shopsy.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecom.shopsy.DTO.Customer;
@@ -13,6 +14,7 @@ import jakarta.validation.Valid;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationDetailsSource;
 import org.springframework.security.core.Authentication;
@@ -47,8 +49,8 @@ public class CustomerController {
     }
 
     @GetMapping("/showAll-product")
-    public List<Product> getAll() {
-        return cs.getAll();
+    public List<Product> getAll(@RequestParam(defaultValue = "0") int page,@RequestParam(defaultValue = "10") int size) {
+        return cs.getAll(page,size);
     }
     
     
