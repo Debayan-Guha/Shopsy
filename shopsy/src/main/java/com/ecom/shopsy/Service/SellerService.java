@@ -108,8 +108,21 @@ public class SellerService {
     }
 
     public List<Product> getAll() {
-        
-        List<ProductEntity> p = pr.findAll();
+        SellerEntity se=sr.getByName(uds.getUser());
+        List<Product> pro = new ArrayList<>();
+        for (ProductEntity i : se.getProducts()) {
+            Product product = new Product();
+            product.setId(i.getId());
+            product.setName(i.getName());
+            product.setCategory(i.getCategory());
+            product.setColor(i.getColor());
+            product.setPrice(i.getPrice());
+            product.setStock(i.getStock());
+            product.setAvailable(i.getAvailable());
+
+            pro.add(product);
+        }
+        /* List<ProductEntity> p = pr.findAll();
         List<Product> pro = new ArrayList<>();
         for (ProductEntity i : p) {
             Product product = new Product();
@@ -122,7 +135,7 @@ public class SellerService {
             product.setAvailable(i.getAvailable());
 
             pro.add(product);
-        }
+        } */
 
         return pro;
     }
